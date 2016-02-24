@@ -10,8 +10,10 @@
           $scope.submit = function() {
             $http.post('https://incident.wafflejs.com', {
               description: $scope.description
+            }).then(function() {
+              alert('Thank you. The organizers have been notified.')
+              $scope.description = null
             })
-            alert('Thank you. The organizers have been notified.')
           }
         })
     </script>
@@ -36,11 +38,9 @@
       <section>
         <div class="container-fluid">
           <h1>Incident</h1>
-          <p>Anonymously send us a report</p>
+          <p>Anonymously send us a report:</p>
           <form ng-app="incident" ng-controller="incident" ng-submit="submit()">
-            <p>
-              <textarea ng-model="description"></textarea>
-            </p>
+            <p><textarea ng-model="description" autofocus></textarea></p>
             <button>Report</button>
           </form>
         </div>
