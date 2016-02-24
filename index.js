@@ -3,6 +3,7 @@ const express = require('express')
 
 const app = express()
 
+app.use(require('body-parser').json())
 app.use(require('body-parser').urlencoded({ extended: false }))
 
 app.use(function (req, res) {
@@ -11,7 +12,7 @@ app.use(function (req, res) {
     json: {
       username: 'Incident',
       icon_emoji: ':japanese_ogre:',
-      text: req.body.Body
+      text: req.body.Body || req.body.body || req.body.description
     }
   })
   res.status(204).end()
