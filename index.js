@@ -1,9 +1,13 @@
-const http = require('http')
 const request = require('request')
+const express = require('express')
 
-const server = http.createServer(function (request, response) {
-  response.writeHead(204)
-  response.end()
+const app = express()
+
+app.use(require('body-parser').urlencoded({ extended: false }))
+
+app.use(function (req, res) {
+  console.log(req.body)
+  res.status(204).end()
 })
 
-server.listen(process.env.PORT || 8080)
+app.listen(process.env.PORT || 8080)
