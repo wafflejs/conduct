@@ -8,10 +8,10 @@
     <script src="https://wafflejs.com/dist/main.js"></script>
     <script>
       angular
-        .module('incident', [])
-        .controller('incident', function($scope, $http) {
+        .module('conduct', [])
+        .controller('conduct', function($scope, $http) {
           $scope.submit = function() {
-            $http.post('https://incident.wafflejs.com', {
+            $http.post('https://conduct.wafflejs.com', {
               description: $scope.description
             }).then(function() {
               alert('Thank you. The organizers have been notified.')
@@ -55,7 +55,7 @@
             <li>Anonymously text (650) 735-0005.</li>
             <li>Or, anonymously report it via the form below.</li>
           </ul>
-          <form ng-app="incident" ng-controller="incident" ng-submit="submit()">
+          <form ng-app="conduct" ng-controller="conduct" ng-submit="submit()">
             <p><textarea ng-model="description" placeholder="Anonymously send us a report." autofocus></textarea></p>
             <button>Report</button>
           </form>
