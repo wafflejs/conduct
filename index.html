@@ -63,13 +63,13 @@
             <li>Anonymously text (650) 735-0005.</li>
             <li>Or, anonymously report it via the form below.</li>
           </ul>
-          <form ng-app="conduct" ng-controller="conduct" name='form' ng-submit="submit()">
+          <form ng-app="conduct" ng-controller="conduct" name="form" ng-submit="submit()">
             <p><textarea ng-model="description" placeholder="Anonymously send us a report." autofocus required></textarea></p>
             <p>
               We’ll review and act on it. If you let us know who you are, we’ll
               follow up with you.
             </p>
-            <button ng-disabled='form.$invalid'>Report</button>
+            <button ng-disabled="form.$invalid">Report</button>
           </form>
 
           <!--
