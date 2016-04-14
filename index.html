@@ -24,6 +24,7 @@
       textarea {
         box-sizing: border-box;
         width: 100%;
+        height: 8em;
       }
     </style>
   </head>
@@ -41,8 +42,15 @@
       <section>
         <div class="container-fluid">
           <h1>Code of Conduct</h1>
-          <p>We want WaffleJS to be a safe and inclusive environment. That's why ask our attendees to follow <a href="http://jsconf.com/codeofconduct.html">our code of conduct</a>.</p>
-          <p>In the unfortunate case that you see someone violating the code of conduct, here are some ways you can report it to us.</p>
+          <p>
+            We want WaffleJS to be a safe and inclusive environment. That’s why
+            ask our attendees to follow our <a
+              href="http://jsconf.com/codeofconduct.html">code of conduct</a>.
+          </p>
+          <p>
+            In the unfortunate case that you see someone violating the code of
+            conduct, here are some ways you can report it to us:
+          </p>
           <ul>
             <li>DM <a href="https://twitter.com/wafflejs">@wafflejs</a>.</li>
             <li>Let a co-organizer know, in person or via Twitter. (
@@ -55,9 +63,13 @@
             <li>Anonymously text (650) 735-0005.</li>
             <li>Or, anonymously report it via the form below.</li>
           </ul>
-          <form ng-app="conduct" ng-controller="conduct" ng-submit="submit()">
-            <p><textarea ng-model="description" placeholder="Anonymously send us a report." autofocus></textarea></p>
-            <button>Report</button>
+          <form ng-app="conduct" ng-controller="conduct" name='form' ng-submit="submit()">
+            <p><textarea ng-model="description" placeholder="Anonymously send us a report." autofocus required></textarea></p>
+            <p>
+              We’ll review and act on it. If you let us know who you are, we’ll
+              follow up with you.
+            </p>
+            <button ng-disabled='form.$invalid'>Report</button>
           </form>
 
           <!--
